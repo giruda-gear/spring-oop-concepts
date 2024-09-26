@@ -12,14 +12,14 @@ class RateDiscountPolicyTest {
     RateDiscountPolicy rateDiscountPolicy = new RateDiscountPolicy();
 
     @Test
-    @DisplayName("VIP get a 10% discount")
+    @DisplayName("VIP get a 20% discount")
     void vipDiscount() {
         // given
         Member member = new Member(1L, "memberVIP", Grade.VIP);
         // when
         int discount = rateDiscountPolicy.discount(member, 10000);
         // then
-        assertThat(discount).isEqualTo(1000);
+        assertThat(discount).isEqualTo(2000);
     }
 
     @Test
